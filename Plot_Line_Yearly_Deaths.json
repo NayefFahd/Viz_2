@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width":600,
+    "height":300,
+    "data": {
+        "url": "https://raw.githubusercontent.com/NayefFahd/Data_Vis_DataSource/main/smoking-deaths-1990-2019.csv"
+    },
+    "transform": [
+        {"filter": "datum.Country=='World'"}
+    ],
+
+    "layer":[
+        {
+            "mark":{"type":"bar", "point":{"color":"darkred"}, "color": "darkred", "width":3},
+    "encoding": {
+        "x": {"field": "Year","type": "temporal", "axis": {"grid": false, "title":null}},
+        "y": {"field":"Deaths_Recorded","type": "quantitative", "scale": {"domain":[0,8000000]},"axis":{
+            "grid": false,
+            "tickCount": 4,
+            "title":null
+        }},
+        "tooltip": [
+            {"field": "Year", "type": "temporal", "title": "Year"},
+            {"field": "Deaths_Recorded", "type": "quantitative"}
+          ]
+    }
+        },
+        {
+            "mark":{"type":"circle", "point":{"color":"darkred"}, "color": "black", "size":150, "opacity":1},
+    "encoding": {
+        "x": {"field": "Year","type": "temporal", "axis": {"grid": false, "title":null}},
+        "y": {"field":"Deaths_Recorded","type": "quantitative", "scale": {"domain":[0,8000000]},"axis":{
+            "grid": false,
+            "tickCount": 4,
+            "title":null
+        }},
+        "tooltip": [
+            {"field": "Year", "type": "temporal", "title": "Year"},
+            {"field": "Deaths_Recorded", "type": "quantitative"}
+          ]
+    }
+        }
+
+    ],
+    
+    "config": {
+        "view": {
+           "stroke": "transparent"
+        },
+        "axisX": {"labelFontSize":12, "labelFontWeight":"bold","labelColor":"#5e5d5d"},
+      "axisY":  {"labelFontSize":12, "labelFontWeight":"bold","labelColor":"#5e5d5d"}
+      }
+}

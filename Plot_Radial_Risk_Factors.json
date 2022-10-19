@@ -1,0 +1,56 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple radial chart with embedded data.",
+    "width":500,
+    "height":400,
+    "data": {
+      "values": [
+        {"Risk Factor": "High Blood Pressure", "Deaths Recorded":10.85},
+        {"Risk Factor": "Smoking( 1st and 2nd hand)", "Deaths Recorded":8.99},
+        {"Risk Factor": "Air polution(indoor & outdoor)", "Deaths Recorded":6.67},
+        {"Risk Factor": "High Blood Sugar", "Deaths Recorded":6.5},
+        {"Risk Factor": "Obesity", "Deaths Recorded":5.02},
+        {"Risk Factor": "Alcohol Use", "Deaths Recorded":2.44},
+        {"Risk Factor": "Diet High in Sodium", "Deaths Recorded":1.89},
+        {"Risk Factor": "Diet Low in whole grain", "Deaths Recorded":1.84},
+        {"Risk Factor": "Low Birth Weight", "Deaths Recorded":1.7},
+        {"Risk Factor": "Unsafe Water Use", "Deaths Recorded":1.23}
+      ]
+    },
+    "transform": [{"calculate": "datum['Risk Factor'] + ': ' + datum['Deaths Recorded']", "as": "Chart Text"}],
+    "encoding": {
+      "theta": {"field": "Deaths Recorded", "type": "quantitative", "stack": true},
+      "radius": {"field": "Deaths Recorded", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
+      "color": {"field": "Deaths Recorded", "type": "nominal", "legend": null,
+      "scale": {
+        "range": ["#D3D3D3","#D3D3D3","#D3D3D3","#D3D3D3","#D3D3D3","#D3D3D3","#D3D3D3","#D3D3D3","#8B0000","#D3D3D3"]
+      }
+    },
+      "tooltip":[
+        {"field":"Risk Factor","type": "nominal"},
+        {"field": "Deaths Recorded", "type": "quantitative"}
+      ]
+        
+      },
+    "layer": [{
+      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+    },{
+      "mark": {"type": "text", "radiusOffset": 100, "angle": 0,"fontWeight":"bold","size":15,"dx":-35, "dy":-50},
+      "encoding": {
+        "text": {"field": "Chart Text", "type": "nominal"},
+        "opacity": {"condition": {"test": "datum['Risk Factor'] == 'Smoking( 1st and 2nd hand)'", "value": 1}, "value": 0}
+      }
+    },{
+      "mark": {"type": "text", "radiusOffset": 50, "angle": 0, "size":15, "dx":20, "dy":-15},
+      "encoding": {
+        "text": {"field": "Chart Text", "type": "nominal"},
+        "opacity": {"condition": {"test": "datum['Deaths Recorded'] >5 && datum['Risk Factor'] != 'Smoking( 1st and 2nd hand)' ", "value": 1}, "value": 0}
+      }
+    }
+  ],
+    "config": {
+      "view": {
+         "stroke": "transparent"
+      }
+    }
+}

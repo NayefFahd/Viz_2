@@ -1,0 +1,97 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width":600,
+    "height":500,
+    "data": {
+        "url": "https://raw.githubusercontent.com/NayefFahd/Data_Vis_DataSource/main/smoking-death-rate.csv"
+    },
+    "transform": [{"filter": "datum.Year==1990" } ],
+    "layer":[{
+        "data": {
+            "values": [
+              {"X_Point": 10, "Y_Point":10},
+              {"X_Point": 400, "Y_Point":400}
+            ]
+          },
+          "mark":{"type": "line","color": "black","strokeWidth":1},
+          "encoding": {
+            "x": {"field":"X_Point", "scale":{"type": "log","domain":[10,400]},
+            "axis": {"grid": false,
+            "tickCount":0, 
+            "title":"2019",
+            "titleFontSize":30,
+            "titleFontWeight":"lighter",
+            "titleColor": "#5e5d5d"
+        }},
+
+            "y": {"field": "Y_Point","scale":{"type": "log","domain":[10,400]},
+            "axis": {"grid": false,
+            "tickCount":0}}
+          }
+    },{
+        "params": [
+            {
+            "name": "income_highlight",
+            "select": {"type": "point", "fields": ["Income classifications (World Bank (2017))"]},
+            "bind": "legend"
+            }
+            
+        ],
+        "mark": "circle",
+        "encoding": {
+            "x": {
+                "field": "Death_Rate_2019",
+                "type": "quantitative",
+                "scale":{"type": "linear","domain":[10,400]},
+                "axis": { "grid": false}
+            },
+            "y": {
+                "field": "Death_Rate",
+                "type": "quantitative",
+                "scale":{"type": "log","domain":[10,400]},
+                "axis": {"grid": false,
+                "title":"1990",
+                "titleFontSize":30,
+                "titleFontWeight":"lighter",
+                "titleColor": "#5e5d5d"}
+            },
+            "color": {
+                "field": "Income classifications (World Bank (2017))",
+                "type": "nominal",
+                "scale": {
+                    "range": [
+                        "#e41a1c",
+                        "#984ea3",
+                        "#ff7f00",
+                        "#a6cee3",
+                        "#377eb8",
+                        "#a65628"
+                        ]
+                },
+                "legend":{
+                    "title":"Filter By Country Income", 
+                    "orient": "bottom-right",
+                "titleFontSize":15,
+            "symbolSize":100,
+        "labelFontSize":12,
+    "labelColor": "#5e5d5d"}
+            },
+            "opacity":{
+                "condition": {"param": "income_highlight", "value": 0.8},
+                    "value": 0.2
+            },
+            "tooltip": [
+                {"field": "Country", "type": "nominal"},
+                {"field": "Income classifications (World Bank (2017))", "type": "nominal", "title": "Income Classification"},
+                {"field": "Death_Rate", "type": "quantitative", "format": ".2f","title": "Death Rate 1990"},
+                {"field": "Death_Rate_2019", "type": "quantitative", "format": ".2f", "title":"Death Rate 2019"}
+                ]
+        }
+    }
+],
+"config": {
+    "view": {
+       "stroke": "transparent"
+    }
+  }
+}

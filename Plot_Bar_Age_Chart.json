@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width":600,
+  "height":300,
+  "data": {
+      "url": "https://raw.githubusercontent.com/NayefFahd/Data_Vis_DataSource/main/smoking-age-deaths.csv"
+  },
+  "transform": [{"filter": "datum.Country=='World'"}],
+  "layer": [
+  { 
+      "mark":{"type":"bar"},
+  "encoding": {
+      "x": {"field": "Year","type": "nominal","axis":{"grid": false, "title": null}},
+      "y": {"field":"Recorded Deaths","type": "quantitative",
+    "axis":{"grid": false, "title": null}},
+      "color": {
+          "field":"Age Group","type": "nominal"
+      },
+      "tooltip": [
+          {"field":"Age Group","type": "nominal"},
+          {"field": "Year", "type": "nominal", "title": "Year"},
+          {"field": "Recorded Deaths", "type": "quantitative"}
+        ]
+  }
+
+  }
+],
+"config": {
+    "view": {
+        "stroke": "transparent"
+     },
+
+     "legend": {
+        "orient": "none",
+        "direction": "horizontal",
+        "legendX": 150,
+        "legendY": 350,
+        "title": null,
+        "gradientLength":400,
+        "symbolSize":200,
+        "labelFontSize":20
+      },
+      "axisX": {"labelFontSize":12, "labelFontWeight":"bold","labelColor":"#5e5d5d"},
+      "axisY":  {"labelFontSize":12, "labelFontWeight":"bold","labelColor":"#5e5d5d"}
+}
+}

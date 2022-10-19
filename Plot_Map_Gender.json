@@ -1,0 +1,99 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width":600,
+  "height":600,
+  "params": [{
+    "name": "zoom_level",
+    "value": 200,
+    "bind": {
+    "input": "range",
+    "min": 100,
+    "max": 1000,
+    "step": 10,
+    "name": "Zoom: "
+    }
+  },{
+    "name": "center_to",
+    "value": [8, -2],
+    "bind": {
+    "input": "select",
+    "options": [
+    [8, -2],
+    [15, 19],
+    [100, 50],
+    [30, 50],
+    [-100, 50],
+    [140, -20.95],
+    [100, -200]
+    ],
+    "labels": ["World", "Africa", "Asia","Europe","North America", "Oceania","South America"],
+    "name": "Map Centre: "
+    }
+  }
+],
+"projection": {"type": "equalEarth","center": {"expr": "center_to"},"scale":{"expr": "zoom_level"}},
+  "data":{
+    "url": "https://raw.githubusercontent.com/NayefFahd/Data_Vis_DataSource/main/daily_smokers.csv"
+  },
+  "layer":[
+    {
+      "data": {
+          "url":
+          "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+          "format": {"type": "topojson", "feature": "oceans"}
+      },
+      "mark": {"type": "geoshape", "fill": "skyblue"}
+      },
+      {
+    "data": {
+      "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
+      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "black",
+        "fill":"white"
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "properties.NAME", "type": "nominal", "title": "Country"}
+
+        ]
+      }
+  },{
+    "data":{
+      "url": "https://raw.githubusercontent.com/NayefFahd/Data_Vis_DataSource/main/gender_2020.csv"
+    },
+    "mark":{"type":"circle"},
+    "encoding": {
+      "longitude": {"field": "Longitude", "type": "quantitative"},
+      "latitude": {"field": "Latitude", "type": "quantitative"},
+      
+      "color":{
+        "field":"Gender",
+        "type": "nominal",
+        "scale":{"range":["#FFFF00","#00008B"]},
+        "legend":null
+      },
+      "size":{"field":"Percentage","type": "quantitative","legend":null},
+      "tooltip": [
+        {"field": "Gender", "type": "nominal"},
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field":"Percentage","type": "quantitative", "format":".2f"}
+      ]
+    }
+  },
+      {
+          "data": {
+              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+              "format": {"type": "topojson", "feature":"ne_110m_graticules_30"}
+              },
+              "mark": {"type": "geoshape", "fill": null, "stroke":"lightgray"}
+      }        
+],
+"config": {
+  "view": {
+     "stroke": "transparent"
+  }
+}
+}

@@ -1,0 +1,326 @@
+body{
+    color: darkgray;
+    font-family: 'Newsreader',serif;
+    background-color:white;
+}
+
+p{
+    line-height: 1.5em;
+    text-align: center;
+    font-weight: 400;
+    font-size: 25px;
+    color: #5e5d5d;
+}
+
+
+.Global_Container{
+    width:90%;
+    margin: auto;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+
+.Dash_Title h1{
+    text-align: center;
+    font-weight: 600;
+    margin: auto;
+    padding-top: 10px;
+    font-size: 50px;
+    color: white;
+    background-color: #5e5d5d;
+
+}
+
+
+.Title_Container h1{
+    text-align: center;
+    font-weight: 600;
+    margin: auto;
+    padding-top: 10px;
+    font-size: 40px;
+    color: white;
+    background-color: #5e5d5d;
+    position: relative;
+
+}
+
+
+.chart-text-container{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.chart-box{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#Risk_Factor{
+    transform: translate(0px,50px);
+    flex: 1;
+}
+
+#risk-text{
+    flex: 1;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#risk-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: #5e5d5d;
+    /* position: relative;
+    top: -520px; */
+    transform: translate(0,-510px);
+    flex: 1;
+}
+#smoking-highlight{
+    font-weight: bold;
+    color: darkred;
+}
+
+#Death_Percentage{
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    transform: translate(35px,0px);
+}
+
+#map-percentage-text{
+    flex: 1;
+    transform: translate(0px,-60px);
+}
+
+#Percent-15{
+    font-size: xx-large;
+    color:  #0e6655 ;
+    font-weight: bold;
+}
+
+#Percent-13{
+    font-size: xx-large;
+    color:  #138d75 ;
+    font-weight: bold;
+}
+
+#Percent-2{
+    font-size: xx-large;
+    color:  #83400e ;
+    font-weight: bold;
+}
+
+#map-percentage-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: #5e5d5d;
+    /* position: relative;
+    top: -520px; */
+    transform: translate(0px,-620px);
+    flex: 1;
+}
+
+#Yearly_Death_Count{
+    align-items: center;
+    justify-content: center;
+    transform: translate(0px,110px);
+    flex: 1;
+}
+
+#line-text{
+    flex: 1;
+    transform: translate(0px,40px);
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#line-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: #5e5d5d;
+    /* position: relative;
+    top: -520px; */
+    transform: translate(0px,-330px);
+    flex: 1;
+}
+
+#death-count{
+    color: darkred;
+    font-weight: bold;
+}
+
+#Age_Chart{
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+#age-text{
+    flex: 1;
+    transform: translate(0px,-80px);
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#age-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: #5e5d5d;
+    transform: translate(20px,-470px);
+    /* position: relative;
+    top: -520px; */
+    flex: 1;
+}
+
+.Percent-50{
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.Percent-40{
+    color:  #f39c12 ;
+    font-weight: bold;
+}
+.Percent-10{
+    color:  #2471a3 ;
+    font-weight: bold;
+}
+
+
+
+#Gender_Map{
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    transform: translate(0px,0px);
+}
+
+#map-gender-text{
+    flex: 1;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#gender-text{
+    font-size: 30px;
+    transform: translate(0px,-80px);
+    line-height: 1.6em;
+
+}
+
+#map-gender-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: #5e5d5d;
+    /* position: relative;
+    top: -520px; */
+    transform: translate(0px,-760px);
+    flex: 1;
+}
+
+#males{
+    color:   #081297;
+    font-weight: bold;
+}
+
+#females{
+    color:  yellow ;
+    font-weight: bold;
+}
+
+#male-percent{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#female-percent{
+    font-size: 35px;
+    font-weight: bold;
+}
+#Bubble_Plot{
+    align-items: center;
+    justify-content: center;
+    transform: translate(0px,20px);
+    flex: 1;
+    position: relative;
+}
+
+#bubble-text{
+    flex: 1;
+    transform: translate(0px,-30px);
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#bubble-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: #5e5d5d;
+    /* position: relative;
+    top: -520px; */
+    transform: translate(0px,-600px);
+    flex: 1;
+}
+
+#bubble-line{
+    font-weight: bold;
+    color: black;
+}
+
+#Cigarrete_Affordability{
+    align-items: center;
+    justify-content: center;
+    transform: translate(0px,40px);
+    flex: 1;
+}
+
+#cigarrete-text{
+    flex: 1;
+    transform: translate(0px,-60px);
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#cigarrete-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: #5e5d5d;
+    /* position: relative;
+    top: -520px; */
+    transform: translate(-100px,-730px);
+    padding-left: 100px;
+    padding-right: 100px;
+    flex: 1;
+}
+
+#death-rate{
+    font-weight: bold;
+    color: black;
+}
+
+#cigarrete-affordability{
+    font-weight: bold;
+    color:   #196f3d  ;
+}
+#Demographics{
+    transform: translate(0px,-90px);
+}
+
+#awareness{
+    transform: translate(0px,-50px);
+}
+
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="Connector.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Dashboard_Layout.css">
+
+    <title>Smoking Stats Dashbaord </title>
+
+</head>
+
+<body>
+
+        <div class="Global_Container">
+        
+        <div class="Dash_Title">
+            <h1>The Global Impact of Smoking</h1>
+        </div>
+
+        
+
+
+        <div class="chart-text-container">
+            <div id="risk-text">
+                <p>
+                    Did you know that <span id="smoking-highlight">smoking is the second highest 
+                    death risk factor</span> in the world, killing more than 
+                    8 million people every year. More than 7 million of 
+                    these recorded deaths are due to direct use of tobacco,
+                    while approximately 1.2 million people die globally due
+                    to exposure from second-hand smoke.
+                </p>
+            </div>
+
+            <div class="chart-box">
+                <div id="Risk_Factor"></div>    
+
+                <div id="risk-title">
+                    <h2>Deaths recorded in millions by Risk Factor, 2019</h2>     
+                </div>
+            </div>
+        </div>
+        
+ 
+        <div class="Title_Container">
+            <h1>Smoking in the 20th Century</h1>
+        </div>
+
+        <div class="chart-text-container">
+            <div id="line-text">
+                <p>
+                    Over the 20th century, tobacco smoking caused <span id="death-count">approximately 
+                    100 million</span> deaths globally. According to the IHME(Institute 
+                    for Health Metrics and Evaluation), about 13% of global deaths 
+                    is due to direct tobacco smoking, while about 2% is due to second
+                    hand smoke 
+                </p>
+            </div>
+
+            <div class="chart-box">
+                <div id="Yearly_Death_Count"></div>
+                <div id="line-title"> 
+                    <h2>Count of Deaths Attributed to Smoking (1990-2019)</h2>
+                </div>
+            </div>            
+        </div>
+
+
+        <div class="chart-text-container">
+
+            <div class="chart-box">
+                <div id="Death_Percentage"></div>
+                
+
+                <div id="map-percentage-title">
+                    <h2>Percentage of total deaths caused by Smoking, 2019</h2>     
+                </div>
+
+
+            </div>
+
+
+            <div id="map-percentage-text">
+                <p>
+                    Total <span id="trial">Share</span> of Global Deaths Attributed to Smoking: <br>
+                    <span id="Percent-15">15%</span>  <br>
+                    Share of Global Deaths Attributed to 1st hand Smoking: <br>
+                    <span id="Percent-13">13%</span><br>
+                    Share of Global Deaths Attributed to 2nd hand Smoking: <br>
+                    <span id="Percent-2">2%</span> <br>
+                </p>
+            </div>
+
+
+        </div>
+
+        
+
+
+        <div class="Title_Container">
+            <h1 id="Demographics">Smokers Demographics</h1>
+        </div>
+
+
+        <div class="chart-text-container">
+            
+                <div id="age-text">
+                    <p>
+                        Approximately, each year around <span class="Percent-50">50%</span> of people who 
+                        die from smoking are aged <span class="Percent-50"> over 70</span>, 
+                        while  <span class="Percent-40">40% </span>are 
+                        aged <span class="Percent-40">between 50-69 </span> and only about
+                        <span class="Percent-10">10% </span> of recorded deaths is attributed to people
+                        aged <span class="Percent-10">between 15 and 49.</span> 
+                    </p>
+                </div>
+
+            <div class="chart-box">
+                <div id="Age_Chart"></div>  
+ 
+            <div id="age-title">
+                <h2>Recorded deaths by Age, (1990-2019)</h2>     
+            </div>
+
+        </div>
+        </div>
+
+
+
+        <div class="chart-text-container">
+            <div class="chart-box">
+                <div id="Gender_Map"></div>
+
+                <div id="map-gender-title">
+                    <h2>Percentage of <span id="males">Males</span> vs <span id="females">Females</span> Smokers (2020)</h2>
+                </div>
+
+
+            </div>
+            <div id="map-gender-text">
+                <p id="gender-text">
+                    Percentage of <span id="males">Males</span> who smoke globally: <br>
+                   <span id="male-percent">37.37% </span> <br>
+                    Percentage of <span id="females">Females</span> who smoke globally: <br>
+                    <span id="female-percent">8.69%</span> <br>
+                </p>
+            </div>
+
+            
+            
+            
+        </div>
+
+
+        <div class="Title_Container">
+            <h1 id="awareness">Smoking Awareness</h1>
+        </div>
+    
+        <div class="chart-text-container">
+            <div id="bubble-text">
+                <p>
+                    Awareness of smoking tobacco effects has increased over
+                    the years,causing a decreased number of smokers and deaths 
+                    since the 1990’s.Points above the <span id="bubble-line">black line </span> 
+                    on the bubble chart shows higher death rate in 1990 and vice versa.  
+                </p>
+            </div>
+
+    
+            <div class="chart-box">
+                <div id="Bubble_Plot"></div>
+
+                <div id="bubble-title">
+                    <h2>Countries Death rate per 100,000</h2>
+                </div>             
+
+            </div>
+        </div>
+          
+        <div class="chart-text-container">
+
+            <div class="chart-box">
+                <div id="Cigarrete_Affordability"></div> 
+
+                <div id="cigarrete-title">
+                    <h2><span id="death-rate">Death Rate</span> per 100,000 Vs <span id="cigarrete-affordability">Cigarrete Affordability (2012)</span></h2>
+                </div>
+
+            </div>
+
+
+
+            <div id="cigarrete-text">
+                <p>
+                    However, the number of deaths and smokers globally
+                    is drastically high as there are not enough restrictions
+                    imposed on tobacco smoking globally. We can see on the
+                    affordibality map the correlation between <span id="death-rate">death rate</span> and
+                    <span id="cigarrete-affordability">cigarrete affordability</span>, where most countries with lower
+                    affordibality has higher death rates recorded. 
+                </p>
+            </div>
+        </div>
+        
+
+
+        
+
+    </div>
+           
+</body>
+
+</html> 
